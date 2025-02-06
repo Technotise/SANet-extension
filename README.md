@@ -2,7 +2,7 @@
 
 **Eine reproduzierbare Implementierung und Optimierung**
 
-## 📚 Übersicht
+## 📖 Übersicht
 
 Diese Arbeit baut auf dem **SANet-Modell (Skeleton-Aware Neural Sign Language Translation)** auf und erweitert es durch eine vollständige Implementierung und Optimierung. Ziel ist es, ein leistungsfähiges System zur Übersetzung von Gebärdensprache in Text bereitzustellen, das auf **Skelettdaten aus Videomaterial** basiert.
 
@@ -36,25 +36,26 @@ pip install -r requirements.txt
 
 ## 🚀 Nutzung
 
+Das Programm wird mit folgendem Befehl ausgeführt:
+```bash
+python3 main.py
+```
+
 ### **1. Vorbereitung der Daten**
-Die Methode benötigt **Skelettdaten aus Videos**. Falls du eigene Daten verwendest, kannst du sie mit **OpenPose oder MediaPipe** extrahieren.
+Einstellungen müssen in der **config.py** durchgeführt werden.
 
+### **2. Mögliche Parameter und deren Anwendung**
+Das Skript unterstützt folgende Parameter:
+
+| Parameter | Typ | Mögliche Werte | Standardwert | Beschreibung |
+|-----------|------|----------------|--------------|--------------|
+| `--data_preprocessing_mode` | str | `process`, `load` | `load` | Wählt den Modus zur Datenvorverarbeitung |
+| `--step` | int | 0 - 7 | `0` | Wählt den spezifischen Vorverarbeitungsschritt |
+| `--dataset_mode` | int | 0, 1, 2 | `0` | Wählt den Datensatzmodus: 0 = Train & Test, 1 = Train, 2 = Test |
+
+Beispiel für die Nutzung:
 ```bash
-python preprocess.py --input <video_path> --output <skeleton_data>
-```
-
-### **2. Training starten**
-Starte das Modelltraining mit:
-
-```bash
-python train.py --data <skeleton_data> --epochs 50 --batch_size 32
-```
-
-### **3. Modell evaluieren**
-Das trainierte Modell kann mit etablierten Metriken bewertet werden:
-
-```bash
-python evaluate.py --model <trained_model>
+python3 main.py --data_preprocessing_mode process --step 3 --dataset_mode 1
 ```
 
 ## 📊 Ergebnisse
@@ -73,4 +74,3 @@ Die implementierten Verbesserungen führten zu signifikanten Verbesserungen der 
 ## 📚 Weitere Informationen
 
 Diese Arbeit wurde im Rahmen der **Projektgruppe Gebärdensprache** an der **Fachhochschule Südwestfalen** (Sommersemester 2024 – Wintersemester 2024/25) durchgeführt.
-
