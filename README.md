@@ -27,11 +27,10 @@ Diese Arbeit baut auf dem **SANet-Modell (Skeleton-Aware Neural Sign Language Tr
 - [PyTorch](https://pytorch.org/) für neuronale Netze
 - OpenPose oder MediaPipe zur Extraktion von Skelettdaten
 
-### Installation der Abhängigkeiten:
+### Installation:
 ```bash
 git clone https://github.com/Technotise/SANet-extension.git
 cd SANet-extension
-pip install -r requirements.txt
 ```
 
 ## 🚀 Nutzung
